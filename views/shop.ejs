@@ -49,8 +49,8 @@
         <nav>
             <a href="" class="logo"><%=all.shop[0].name%></a>
             <div class="link">
-                <a href=""><img src="https://cdn-icons-png.flaticon.com/512/10846/10846192.png" alt=""><p>QR Code</p></a>
-                <a href=""><img src="https://cdn-icons-png.flaticon.com/512/3600/3600243.png" alt=""><p>Share</p></a>
+                <a href="javascript:showqr()"><img src="https://cdn-icons-png.flaticon.com/512/10846/10846192.png" alt=""><p>QR Code</p></a>
+                <a href="javascript:shar()"><img src="https://cdn-icons-png.flaticon.com/512/3600/3600243.png" alt=""><p>Share</p></a>
                 <img onclick="showmenu()" src="https://cdn-icons-png.flaticon.com/512/8166/8166537.png" class="menubtn" alt="">
             </div>
         </nav>
@@ -68,6 +68,13 @@
                     <a href=""><img src="https://cdn-icons-png.flaticon.com/512/2111/2111724.png" alt=""><p>Wechat</p></a>
                     <a href="https://www.google.com/maps/place/<%=all.shop[0].location%>"><img src="https://cdn-icons-png.flaticon.com/512/2642/2642502.png" alt=""><p>Address</p></a>
                 </div>
+                <div class="space"></div>
+                <div class="div">
+                    <div class="i">
+                        <p>Language</p>
+                        <div id="google_translate_element"></div>
+                    </div>
+                </div>
             </div>
             <div class="home">
                 <h1 class="title">What you want to order?</h1>
@@ -82,14 +89,53 @@
                 </div>
             </div>
         </div>
+        <div class="pop">
+            <img onclick="closemenu()" src="https://cdn-icons-png.flaticon.com/512/2191/2191499.png" class="close" alt="">
+            <h1>Share<span>via QR Code</span></h1>
+            <p>Aim your scanner to QR Code below.</p>
+            <img class="qr" src="https://i0.wp.com/shoocal.com/wp-content/uploads/2020/12/How-to-Scan-QR-code-for-Menu.jpg" alt="">
+            <button onclick="down()">
+                <img src="https://cdn-icons-png.flaticon.com/512/3185/3185874.png" alt="">
+                <p>Download QR Code</p>
+            </button>
+        </div>
+        <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
         <script>
+            var pop = document.querySelector(".pop");
             var menu = document.querySelector(".menu");
+            var qrlink = 'https://api.qrserver.com/v1/create-qr-code/?size=150x150&data='+window.location.href;
             function showmenu(){
                 menu.style.left = 0
             }
             function closemenu(){
-                menu.style.left = '-300px'
+                menu.style.left = '-300px';
+                pop.style.display = 'none'
             }
+            function shar(){
+                navigator.share({
+                    url:window.location.href,
+                    title:document.title
+                })
+            }
+            function showqr(){pop.style.display='flex'}
+            document.querySelector(".pop .qr").src = qrlink;
+            function down(){
+                fetch(qrlink).then(re=>re.blob()).then(all=>{
+                    let blob = URL.createObjectURL(all);
+                    let atag = document.createElement('a');
+                    atag.href = blob;
+                    atag.download = Math.floor(Math.random()*100000);
+                    document.body.appendChild(atag);
+                    atag.click();
+                    atag.remove();
+                    closemenu();
+                    alert("Download successfully.")
+                })
+            }
+            function googleTranslateElementInit() {
+                new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+            }
+            document.querySelector(".home").onclick=()=>{closemenu()}
         </script>
     </body>
     </html>

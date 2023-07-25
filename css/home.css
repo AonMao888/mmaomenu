@@ -18,6 +18,9 @@ nav .logo{
     font-size: 42px;
     color: white;user-select: none;
     margin-left: 24px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 nav .link{
     display: flex;
@@ -65,6 +68,7 @@ nav .link a img{
 nav .link a p{
     margin: 3px;
     font-size: 19px;
+    white-space: nowrap;
 }
 .menubtn{
     height: 21px;
@@ -73,6 +77,7 @@ nav .link a p{
     user-select: none;
     cursor: pointer;
     margin-left: 5px;
+    display: none;
 }
 .con{
     display: flex;
@@ -85,7 +90,7 @@ nav .link a p{
     max-width: 369px;
     padding-top: 23px;
 }
-.menu .close{
+.close{
     height: 19px;
     position: absolute;
     top: 0;
@@ -260,6 +265,116 @@ nav .link a p{
     color: green;
     margin-left: 12px;
 }
+.space{
+    width: 100%;
+    height: 36px;
+}
+.div{
+    width: 96%;
+    margin: 9px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.205);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    overflow: hidden;
+}
+.i{
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+.i p{
+    margin: 3px;
+    margin-left: 12px;
+}
+#google_translate_element{
+    width: 100%;
+}
+#google_translate_element select{
+    background: white;
+    width: 91%;
+    margin-left: 4px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 2px solid #eee;
+    transform: translateY(6px);
+}
+#google_translate_element span{display: none;}
+#google_translate_element .skiptranslate{color: transparent;}
+.pop{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    background: white;
+    transform: translate(-50%,-50%);
+    border-radius: 12px;
+    border: 1px solid rgba(105, 105, 105, 0.47);
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    display: none;
+}
+.pop h1{
+    margin: 5px;
+    font-size: 36px;
+    color: #333;
+    margin-top: 15px;
+}
+.pop h1 span{
+    font-size: 19px;
+    margin: 5px;
+    color: royalblue;
+}
+.pop p{
+    margin: 5px;
+    color: #333;
+    font-size: 17px;
+}
+.pop .close{
+    display: block;
+}
+.pop .qr{
+    width: 191px;
+    height: 191px;
+    object-fit: contain;
+    object-position: center;
+    user-select: none;
+    box-shadow: 1px 2px 3px rgba(105, 105, 105, 0.3);
+    margin: 9px 0;
+}
+.pop button{
+    display: flex;
+    align-items: center;
+    margin-top: 9px;
+    margin-bottom: 24px;
+    border-radius: 4px;
+    background: royalblue;
+    color: #000000;
+    padding: 9px 24px;
+    border: none;
+    transition: 0.4s;
+    cursor: pointer;
+    outline: 2px solid white;
+    outline-offset: -5px;
+}
+.pop button:hover{
+    outline-offset: 2px;
+    outline-color: #333;
+}
+.pop button:hover p{
+    color: white;
+}
+.pop button img{
+    height: 23px;
+}
+.pop button p{
+    color: #000000;
+    font-size: 16px;
+    transition: 0.4s;
+}
 
 @media(max-width:1270px){
     nav .logo{font-size: 3.6vw;}
@@ -304,6 +419,7 @@ nav .link a p{
         height: 100%;
         transition: 0.4s;
     }
+    .menubtn{display: block;}
     .menu span{font-size: 2vw;}
     .menu p{font-size: 2vw;}
     nav .link a p{font-size: 1.7vw;}
@@ -311,6 +427,7 @@ nav .link a p{
     .menu .close{display: block;}
     .item h1{font-size: 2.7vw;}
     .item p{font-size: 1.7vw;}
+    .i p{color: #333;}
 }
 @media(max-width:650px){
     nav .logo{font-size: 4.2vw;}
@@ -331,8 +448,8 @@ nav .link a p{
     nav .link a p{font-size: 2.5vw;}
     .home{height: calc(100vh - 46px);}
     .home .title{font-size: 5.1vw;}
-    .menu span{font-size: 2.7vw;}
-    .menu p{font-size: 2.7vw;}
+    .menu span{font-size: 3.2vw;}
+    .menu p{font-size: 3.2vw;}
     .grid{width: 98%;gap: 5px;}
     .item h1{font-size: 3.9vw;margin: 2px;margin-left: 10px;}
     .item p{font-size: 2.9vw;margin: 3px;margin-left: 10px;}
@@ -340,7 +457,19 @@ nav .link a p{
     .home::-webkit-scrollbar{
         width: 7px;
     }
+    .pop{width: 91%;}.pop h1{font-size: 6vw;}
+    .pop h1 span{font-size: 3.6vw;}.pop p{font-size: 3.6vw;}
+    .pop .qr{height: 159px;width: 159px;}
+    .pop button{padding: 6px 15px;}.pop button img{height: 19px;}
+    .pop button p{font-size: 3.2vw;}
 }
 @media(max-width:500px){
+    nav .logo{margin-left: 9px;}
+    nav .link a:nth-child(1){border: none;padding: 5px;}
+    nav .link a:nth-child(1) p{display: none;}
+    nav .link a:nth-child(1) img{margin-left: 0;height: 19px;}
+    nav .link a:nth-child(1):hover{background: none;}
+    .contact a img{margin: 0 3px;}
     .item img{height: 129px;}
+    .contact a p{font-size: 11px;}
 }

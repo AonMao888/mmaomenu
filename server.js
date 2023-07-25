@@ -33,5 +33,5 @@ app.get('/:id',async(req,res)=>{
 })
 
 app.listen(80,()=>{
-    console.log("server started with port 3000")
+    console.log("server started with port 80")
 })
