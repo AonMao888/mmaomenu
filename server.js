@@ -5,6 +5,7 @@ const app = express();
 var supabaseurl = 'https://lyiwrrnllifscjlpubul.supabase.co';
 var supabasekey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imx5aXdycm5sbGlmc2NqbHB1YnVsIiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTAxMjUwMjAsImV4cCI6MjAwNTcwMTAyMH0.tl6W2--zpYV0Z1ocu8y6yDKX-3UaDfp_ZnHMzJqmfpo';
 
+app.set('views',__dirname+'/views')
 app.set('view engine','ejs');
 var supabase = createClient(supabaseurl,supabasekey);
 
