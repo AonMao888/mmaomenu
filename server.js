@@ -31,6 +31,6 @@ app.get('/:id',async(req,res)=>{
     if(shop){}
 })
 
-app.listen(3000,()=>{
+app.listen(80,()=>{
     console.log("server started with port 3000")
 })
