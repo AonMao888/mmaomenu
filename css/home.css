@@ -1,0 +1,346 @@
+body{
+    margin: 0;
+    background: url('https://wallpaper-mania.com/wp-content/uploads/2018/09/High_resolution_wallpaper_background_ID_77700378476.jpg')no-repeat;
+    background-size: cover;background-position: center;
+    min-height: 100vh;
+}
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    height: 63px;
+    top: 0;
+    z-index: 1;
+}
+nav .logo{
+    text-decoration: none;
+    font-size: 42px;
+    color: white;user-select: none;
+    margin-left: 24px;
+}
+nav .link{
+    display: flex;
+    align-items: center;
+    margin-right: 19px;
+}
+nav .link a{
+    text-decoration: none;
+    padding: 9px 19px;
+    margin: 0 19px;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    transition: 0.4s;
+}
+nav .link a:nth-child(1){
+    border: 2px solid white;
+    color: white;
+}
+nav .link a:nth-child(1):hover{
+    background: white;
+    color: #333;
+}
+nav .link a:nth-child(2){
+    border: 2px solid white;
+    color: #333;
+    background: white;
+    transform: scale(1);
+}
+nav .link a:nth-child(2):hover{
+    animation: navover 0.6s;
+    background: #eee;
+}
+@keyframes navover{
+    30%{transform: scale(1.05);}
+    70%{transform: scale(0.91);}
+}
+nav .link a img{
+    height: 23px;
+    object-fit: contain;
+    object-position: center;
+    user-select: none;
+    margin-right: 3px;
+}
+nav .link a p{
+    margin: 3px;
+    font-size: 19px;
+}
+.menubtn{
+    height: 21px;
+    object-fit: contain;
+    object-position: center;
+    user-select: none;
+    cursor: pointer;
+    margin-left: 5px;
+}
+.con{
+    display: flex;
+    align-items: flex-start;
+}
+.menu{
+    position: sticky;
+    top: 63px;
+    min-width: 369px;
+    max-width: 369px;
+    padding-top: 23px;
+}
+.menu .close{
+    height: 19px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 13px;
+    cursor: pointer;
+    user-select: none;
+    object-fit: contain;
+    object-position: center;
+    display: none;
+}
+.menu span{
+    margin: 3px;
+    margin-left: 24px;
+    color: white;
+    font-size: 17px;
+}
+.menu span b{
+    padding: 2px 5px;
+    background: white;
+    color: royalblue;
+    border-radius: 4px;
+}
+.menu p{
+    margin: 3px;
+    color: white;
+    font-size: 19px;
+}
+.contact{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+}
+.contact a{
+    text-decoration: none;
+    background: white;
+    padding: 7px 15px;
+    border-radius: 50px;
+    margin: 5px;
+    display: flex;
+    align-items: center;
+    transition: 0.4s;
+}
+.contact a:hover{
+    background: #eee;
+    transform: translateY(5px);
+    box-shadow: 1px 2px 3px #3333334e;
+}
+.contact a img{
+    height: 19px;
+    object-fit: contain;
+    object-position: center;
+    user-select: none;
+    margin: 0 5px;
+}
+.contact a p{
+    font-size: 15px;
+}
+.contact a:nth-child(1) p{
+    color: royalblue;
+}
+.contact a:nth-child(2) p{
+    color: #333;
+}
+.contact a:nth-child(3) p{
+    color: green;
+}
+.search{
+    display: flex;
+    margin: 2px auto;
+    width: 96%;
+    align-items: center;
+    background: #fff;
+    overflow: hidden;
+    border-radius: 51px;
+    padding: 9px 0;
+}
+.search input{
+    width: 100%;
+    font-size: 19px;
+    color: #333;
+    background: none;
+    outline: none;border: none;
+    margin-left: 19px;
+}
+.search button{
+    background: none;
+    cursor: pointer;
+    outline: none;border: none;
+    display: flex;align-items: center;justify-content: center;
+    margin-right: 9px;
+}
+.search button img{
+    height: 24px;
+    object-fit: contain;
+    object-position: center;
+    user-select: none;
+}
+.home{
+    width: 100%;
+    display: flex;
+    height: calc(100vh - 64px);
+    overflow-y: scroll;
+    flex-direction: column;
+    align-items: center;
+}
+.home::-webkit-scrollbar{
+    background: transparent;
+    width: 9px;
+}
+.home::-webkit-scrollbar-thumb{
+    background: white;
+    border-radius: 9px;
+}
+.home .title{
+    color: white;
+    margin: 19px 5px;
+    font-size: 51px;
+    transition: 0.4s;
+    transform: scale(1);
+    animation: animatetitle 2s infinite;
+}
+@keyframes animatetitle{
+    0%{transform: scale(1);}
+    20%{transform: scale(1.09);}
+    30%{transform: scale(0.91);}
+    40%{transform: scale(1.09);}
+    50%{transform: scale(0.91);}
+    60%{transform: scale(1);}
+}
+.grid{
+    width: 96%;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 15px;
+}
+.item{
+    width: 100%;
+    overflow: hidden;
+    border-radius: 12px;
+    background: #fff;
+    padding-bottom: 5px;
+    transition: 0.4s;
+    transform: scale(1);
+}
+.item:hover{
+    background: #eee;
+    transform: scale(0.96);
+}
+.item:hover img{
+    transform: scale(1.03);
+}
+.item img{
+    width: 100%;
+    height: 215px;
+    object-fit: cover;
+    object-position: center;
+    user-select: none;
+    transition: 0.4s;
+    transform: scale(1);
+}
+.item h1{
+    margin: 5px;
+    color: royalblue;
+    font-size: 29px;
+    margin-left: 12px;
+}
+.item p{
+    margin: 5px;
+    font-size: 19px;
+    color: green;
+    margin-left: 12px;
+}
+
+@media(max-width:1270px){
+    nav .logo{font-size: 3.6vw;}
+    nav .link a p{font-size: 1.5vw;}
+    nav .link a{padding: 7px 15px;margin: 0 12px;}
+    nav .link a img{height: 19px;}
+    .home .title{font-size: 3.6vw;}
+    .item img{height: 169px;}
+    .item h1{font-size: 2.3vw;}
+    .item p{font-size: 1.2vw;}
+    .menu{min-width: 324px;max-width: 324px;}
+    .search{padding: 7px 0;}.search input{font-size: 17px;}
+    .search button img{height: 22px;}
+    .contact a{padding: 5px 9px;}
+    .contact a img{height: 15px;}
+    .contact a p{font-size: 15px;}
+}
+@media(max-width:1190px){
+    .grid{grid-template-columns: repeat(2,1fr);}
+    .item img{height: 232px;}
+}
+@media(max-width:1020px){
+    .item img{height: 169px;}
+    .menu{min-width: 291px;max-width: 291px;}
+    .contact a p{font-size: 13px;}
+    .contact a img{height: 13px;}
+    .contact a{padding: 4px 8px;margin: 5px 4px;}
+    .search{padding: 7px 0;}.search input{font-size: 15px;margin-left: 15px;}
+    .search button img{height: 20px;}
+    .menu span{font-size: 1.9vw;}
+    .menu p{font-size: 1.8vw;}
+    nav .link a{padding: 6px 14px;margin: 0 9px;}
+}
+@media(max-width:848px){
+    .menu{
+        position: fixed;
+        top: 0;
+        left: -300px;
+        background: #ffffff30;
+        backdrop-filter: blur(10px);
+        z-index: 1;
+        height: 100%;
+        transition: 0.4s;
+    }
+    .menu span{font-size: 2vw;}
+    .menu p{font-size: 2vw;}
+    nav .link a p{font-size: 1.7vw;}
+    .home .title{font-size: 4.2vw;}
+    .menu .close{display: block;}
+    .item h1{font-size: 2.7vw;}
+    .item p{font-size: 1.7vw;}
+}
+@media(max-width:650px){
+    nav .logo{font-size: 4.2vw;}
+    nav .link a p{font-size: 1.8vw;}
+    nav .link a img{height: 15px;}
+    .menu span{font-size: 2.5vw;}
+    .menu p{font-size: 2.5vw;}
+    .menu .close{height: 16px;}
+    .home .title{font-size: 4.5vw;}
+    .item h1{font-size: 3.2vw;}
+    .item p{font-size: 2.3vw;}
+    .grid{gap: 9px;}
+}
+@media(max-width:544px){
+    nav{height: 45px;}
+    nav .logo{font-size: 5.5vw;}
+    nav .link a{margin: 0 5px;}
+    nav .link a p{font-size: 2.5vw;}
+    .home{height: calc(100vh - 46px);}
+    .home .title{font-size: 5.1vw;}
+    .menu span{font-size: 2.7vw;}
+    .menu p{font-size: 2.7vw;}
+    .grid{width: 98%;gap: 5px;}
+    .item h1{font-size: 3.9vw;margin: 2px;margin-left: 10px;}
+    .item p{font-size: 2.9vw;margin: 3px;margin-left: 10px;}
+    .item img{height: 142px;}
+    .home::-webkit-scrollbar{
+        width: 7px;
+    }
+}
+@media(max-width:500px){
+    .item img{height: 129px;}
+}

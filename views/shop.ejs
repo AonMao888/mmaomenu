@@ -1,0 +1,96 @@
+<%if(all.shop.length == 0){%>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>No shop found!</title>
+        <link rel="stylesheet" href="home.css">
+    </head>
+    <body>
+        <nav>
+            <a href="" class="logo">MMao Menu</a>
+            <div class="link">
+                <a href=""><img src="https://cdn-icons-png.flaticon.com/512/10846/10846192.png" alt=""><p>QR Code</p></a>
+                <a href=""><img src="https://cdn-icons-png.flaticon.com/512/3600/3600243.png" alt=""><p>Share</p></a>
+            </div>
+        </nav>
+        <div class="con">
+            <div class="menu">
+                <span><b>0</b> foods available</span>
+                <p style="margin-left: 24px;">description</p>
+                <div class="search">
+                    <input type="text" placeholder="Search foods">
+                    <button><img src="https://cdn-icons-png.flaticon.com/512/875/875623.png" alt=""></button>
+                </div>
+                <div class="contact">
+                    <a href=""><img src="https://cdn-icons-png.flaticon.com/512/10797/10797331.png" alt=""><p>Phone</p></a>
+                    <a href=""><img src="https://cdn-icons-png.flaticon.com/512/2111/2111724.png" alt=""><p>Wechat</p></a>
+                    <a href="https://www.google.com"><img src="https://cdn-icons-png.flaticon.com/512/2642/2642502.png" alt=""><p>Address</p></a>
+                </div>
+            </div>
+            <div class="home">
+                <h1 class="title">Make sure you visit correct shop link!</h1>
+            </div>
+        </div>
+    </body>
+    </html>
+<%}else{%>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title><%=all.shop[0].name%>'s Menu</title>
+        <meta name="description" content="Order <%=all.shop[0].name%>'s food by visit my menu in this website.">
+        <link rel="stylesheet" href="home.css">
+    </head>
+    <body>
+        <nav>
+            <a href="" class="logo"><%=all.shop[0].name%></a>
+            <div class="link">
+                <a href=""><img src="https://cdn-icons-png.flaticon.com/512/10846/10846192.png" alt=""><p>QR Code</p></a>
+                <a href=""><img src="https://cdn-icons-png.flaticon.com/512/3600/3600243.png" alt=""><p>Share</p></a>
+                <img onclick="showmenu()" src="https://cdn-icons-png.flaticon.com/512/8166/8166537.png" class="menubtn" alt="">
+            </div>
+        </nav>
+        <div class="con">
+            <div class="menu">
+                <img onclick="closemenu()" src="https://cdn-icons-png.flaticon.com/512/2191/2191499.png" class="close" alt="">
+                <span><b><%=all.food.length%></b> foods available</span>
+                <p style="margin-left: 24px;"><%=all.shop[0].des%></p>
+                <div class="search">
+                    <input type="text" placeholder="Search foods">
+                    <button><img src="https://cdn-icons-png.flaticon.com/512/875/875623.png" alt=""></button>
+                </div>
+                <div class="contact">
+                    <a href="tel:<%=all.shop[0].phone%>"><img src="https://cdn-icons-png.flaticon.com/512/10797/10797331.png" alt=""><p>Phone</p></a>
+                    <a href=""><img src="https://cdn-icons-png.flaticon.com/512/2111/2111724.png" alt=""><p>Wechat</p></a>
+                    <a href="https://www.google.com/maps/place/<%=all.shop[0].location%>"><img src="https://cdn-icons-png.flaticon.com/512/2642/2642502.png" alt=""><p>Address</p></a>
+                </div>
+            </div>
+            <div class="home">
+                <h1 class="title">What you want to order?</h1>
+                <div class="grid">
+                    <%all.food.forEach((item)=>{%>
+                        <div class="item">
+                            <img src="<%= item.photo%>" alt="">
+                            <h1><%= item.title%></h1>
+                            <p>Price : <%= item.price%>Ks</p>
+                        </div>
+                    <%})%>
+                </div>
+            </div>
+        </div>
+        <script>
+            var menu = document.querySelector(".menu");
+            function showmenu(){
+                menu.style.left = 0
+            }
+            function closemenu(){
+                menu.style.left = '-300px'
+            }
+        </script>
+    </body>
+    </html>
+<%}%>

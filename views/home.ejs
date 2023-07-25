@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+    <link rel="stylesheet" href="home.css">
+</head>
+<body>
+    <nav>
+        <a href="" class="logo">Logo</a>
+        <div class="link">
+            <a href=""><img src="https://cdn-icons-png.flaticon.com/512/10846/10846192.png" alt=""><p>QR Code</p></a>
+            <a href=""><img src="https://cdn-icons-png.flaticon.com/512/3600/3600243.png" alt=""><p>Share</p></a>
+            <img onclick="showmenu()" src="https://cdn-icons-png.flaticon.com/512/8166/8166537.png" class="menubtn" alt="">
+        </div>
+    </nav>
+    <div class="con">
+        <div class="menu">
+            <img onclick="closemenu()" src="https://cdn-icons-png.flaticon.com/512/2191/2191499.png" class="close" alt="">
+            <span>30 foods available</span>
+            <p style="margin-left: 24px;">description for this food shop menu.</p>
+            <div class="search">
+                <input type="text" placeholder="Search foods">
+                <button><img src="https://cdn-icons-png.flaticon.com/512/875/875623.png" alt=""></button>
+            </div>
+            <div class="contact">
+                <a href=""><img src="https://cdn-icons-png.flaticon.com/512/10797/10797331.png" alt=""><p>Phone</p></a>
+                <a href=""><img src="https://cdn-icons-png.flaticon.com/512/2111/2111724.png" alt=""><p>Wechat</p></a>
+                <a href=""><img src="https://cdn-icons-png.flaticon.com/512/2642/2642502.png" alt=""><p>Address</p></a>
+            </div>
+        </div>
+        <div class="home">
+            <h1 class="title">What you want to order?</h1>
+            <div class="grid">
+                <div class="item">
+                    <img src="https://c.ndtvimg.com/2022-06/gp4k2jro_burgers_625x300_20_June_22.jpg?im=FeatureCrop,algorithm=dnn,width=620,height=350?im=FaceCrop,algorithm=dnn,width=1200,height=886" alt="">
+                    <h1>Burger</h1>
+                    <p>Price : 3500Ks</p>
+                </div>
+                <div class="item">
+                    <img src="https://c.ndtvimg.com/2022-06/gp4k2jro_burgers_625x300_20_June_22.jpg?im=FeatureCrop,algorithm=dnn,width=620,height=350?im=FaceCrop,algorithm=dnn,width=1200,height=886" alt="">
+                    <h1>Burger</h1>
+                    <p>Price : 3500Ks</p>
+                </div>
+                <div class="item">
+                    <img src="https://c.ndtvimg.com/2022-06/gp4k2jro_burgers_625x300_20_June_22.jpg?im=FeatureCrop,algorithm=dnn,width=620,height=350?im=FaceCrop,algorithm=dnn,width=1200,height=886" alt="">
+                    <h1>Burger</h1>
+                    <p>Price : 3500Ks</p>
+                </div>
+                <div class="item">
+                    <img src="https://c.ndtvimg.com/2022-06/gp4k2jro_burgers_625x300_20_June_22.jpg?im=FeatureCrop,algorithm=dnn,width=620,height=350?im=FaceCrop,algorithm=dnn,width=1200,height=886" alt="">
+                    <h1>Burger</h1>
+                    <p>Price : 3500Ks</p>
+                </div>
+                <div class="item">
+                    <img src="https://c.ndtvimg.com/2022-06/gp4k2jro_burgers_625x300_20_June_22.jpg?im=FeatureCrop,algorithm=dnn,width=620,height=350?im=FaceCrop,algorithm=dnn,width=1200,height=886" alt="">
+                    <h1>Burger</h1>
+                    <p>Price : 3500Ks</p>
+                </div>
+                <div class="item">
+                    <img src="https://c.ndtvimg.com/2022-06/gp4k2jro_burgers_625x300_20_June_22.jpg?im=FeatureCrop,algorithm=dnn,width=620,height=350?im=FaceCrop,algorithm=dnn,width=1200,height=886" alt="">
+                    <h1>Burger</h1>
+                    <p>Price : 3500Ks</p>
+                </div>
+                <div class="item">
+                    <img src="https://c.ndtvimg.com/2022-06/gp4k2jro_burgers_625x300_20_June_22.jpg?im=FeatureCrop,algorithm=dnn,width=620,height=350?im=FaceCrop,algorithm=dnn,width=1200,height=886" alt="">
+                    <h1>Burger</h1>
+                    <p>Price : 3500Ks</p>
+                </div>
+                <div class="item">
+                    <img src="https://c.ndtvimg.com/2022-06/gp4k2jro_burgers_625x300_20_June_22.jpg?im=FeatureCrop,algorithm=dnn,width=620,height=350?im=FaceCrop,algorithm=dnn,width=1200,height=886" alt="">
+                    <h1>Burger</h1>
+                    <p>Price : 3500Ks</p>
+                </div>
+                <div class="item">
+                    <img src="https://c.ndtvimg.com/2022-06/gp4k2jro_burgers_625x300_20_June_22.jpg?im=FeatureCrop,algorithm=dnn,width=620,height=350?im=FaceCrop,algorithm=dnn,width=1200,height=886" alt="">
+                    <h1>Burger</h1>
+                    <p>Price : 3500Ks</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var menu = document.querySelector(".menu");
+        function showmenu(){
+            menu.style.left = 0
+        }
+        function closemenu(){
+            menu.style.left = '-300px'
+        }
+    </script>
+</body>
+</html>
