@@ -469,6 +469,9 @@ nav .link a p{
     nav .link a:nth-child(1) p{display: none;}
     nav .link a:nth-child(1) img{margin-left: 0;height: 19px;}
     nav .link a:nth-child(1):hover{background: none;}
+    .contact a{height: 19px;}
+    .contact a:nth-child(2) p{display: none;}
+    .contact a:nth-child(3) p{display: none;}
     .contact a img{margin: 0 3px;}
     .item img{height: 129px;}
     .contact a p{font-size: 11px;}
