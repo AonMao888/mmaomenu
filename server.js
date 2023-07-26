@@ -10,7 +10,7 @@ app.set('view engine','ejs');
 var supabase = createClient(supabaseurl,supabasekey);
 
 //get cssfile
-app.get('/home.css',(req,res)=>{res.sendFile(__dirname+'/css/home.css')})
+app.get('/home.css',(req,res)=>{res.sendFile(__dirname+'/css/s.css')})
 
 //listen home page
 app.get('/',(req,res)=>{
